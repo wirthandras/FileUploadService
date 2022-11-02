@@ -13,6 +13,13 @@ namespace FileUploadService.Controllers
             _logger = logger;
         }
 
+        [HttpGet]
+        [Route("Test")]
+        public IActionResult Test()
+        {
+            return Ok("service ready");
+        }
+
         [HttpPost, DisableRequestSizeLimit]
         [Route("{userId}/files")]
         public void UploadFiles(string userId)

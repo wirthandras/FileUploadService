@@ -1,3 +1,4 @@
+using FileUploadService.Responses;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FileUploadService.Controllers
@@ -17,7 +18,9 @@ namespace FileUploadService.Controllers
         [Route("Test")]
         public IActionResult Test()
         {
-            return Ok("service ready");
+            return Ok(new TestResponse {
+                Message = "service ready"
+            });
         }
 
         [HttpPost, DisableRequestSizeLimit]

@@ -32,6 +32,10 @@ namespace FileUploadService.Controllers
             {
                 _logger.LogInformation("Filename: {0}", file.FileName);
             }
+            foreach (var key in Request.Form.Keys)
+            {
+                _logger.LogInformation("Key: {0}, Value: {1}", key, Request.Form[key]);
+            }
         }
     }
 }
